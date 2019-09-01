@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "module": "es2015",
+        "watch": true,
+        "lib": ["dom", "es2015"],
+        "sourceMap": true,
+        "outDir": "build",
+        "downlevelIteration": true,
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

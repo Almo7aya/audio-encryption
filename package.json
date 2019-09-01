@@ -1,0 +1,20 @@
+{
+  "name": "audio-encryption",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "live-server",
+    "watch": "tsc",
+    "encrypt": "node encryptor.js"
+  },
+  "keywords": [],
+  "author": "Ali Almohaya <alialmohaya@gmail.com> (github.com/Almo7aya)",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.5.2"
+  },
+  "dependencies": {
+    "egoroof-blowfish": "^2.2.0",
+    "live-server": "^1.2.1"
+  }
+}

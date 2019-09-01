@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Audio-Player</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-around;
+
+            width: 80%;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Encrypted Audio Files Player.</h1>
+
+    <p>Playing encrypted audio files using normal HTML audio tag with <a target="_black"
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API">MediaSourceExtantion</a>
+        and fetch APIs</p>
+
+    <h2>Encrypted experiments</h2>
+    <div>
+        <h3>Shifting Selected Bytes</h3>
+        <p>The main idea of this method is by shifting and unshifting some selected bytes by 1</p>
+        <p>
+            The bytes that used in this method are <b>70</b>,<b>35</b>,<b>254</b>,<b>127</b><br />
+            so we shift every <b>70</b> &gt;&gt; <b>1</b> to became <b>35</b> and unshift every <b>35</b> &lt;&lt;
+            <b>1</b>
+            to became <b>70</b><br /> and the same with <b>254</b>,<b>127</b>
+            <br />
+            <b>Yes it's fake encryption</b>
+        </p>
+
+
+        <h4>Example</h4>
+
+        <div class="flex">
+            <div>
+                <audio controls src="/songs/badguy-en-bytes-shift.mp3"></audio>
+                <p>Pure html5 player.</p>
+            </div>
+            <div>
+                <span id="shift-bytes-player-container"></span>
+                <p>with this player.</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h3>Encryption With <a target="_black" href="https://en.wikipedia.org/wiki/Blowfish_(cipher)">Blowfish</a>
+            Algorithm</h3>
+        <p>Deezer style encrypt every third 2048 bytes block with a secret key</p>
+
+        <b>It has some bugs with the current player.</b>
+
+        <h4>Example</h4>
+
+        <div class="flex">
+            <div>
+                <audio controls src="/songs/badguy-en-blowfish.mp3"></audio>
+                <p>Pure html5 player.</p>
+            </div>
+            <div>
+                <span id="blowfish-player-container"></span>
+                <p>with this player.</p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h3>Bytes Increasing by 1 (Buggy)</h3>
+        <p>Increase every byte by <b>1</b> so if a byte value is <b>100</b> it became <b>101</b></p>
+
+        <p>It has some bugs when the original byte value is <b>255</b> so it can't be <b>256</b></p>
+
+        <h4>Example</h4>
+
+        <div class="flex">
+            <div>
+                <audio controls src="/songs/badguy-en-bytes-increasing.mp3"></audio>
+                <p>Pure html5 player.</p>
+            </div>
+            <div>
+                <span id="increasing-player-container"></span>
+                <p>with this player.</p>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <script src="node_modules/egoroof-blowfish/dist/blowfish.js"></script>
+    <script src="/build/audio-player.js"></script>
+</body>
+
+</html>
