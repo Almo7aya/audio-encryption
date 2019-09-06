@@ -7,5 +7,5 @@ Also check `index.html` for demos
 ## Commands
 
 - `npm start` to start live server
-- `npm run watch` to run compile typescript code.
+- `npm run watch` to compile typescript code.
 - `npm run encrypt` to encrypt songs
